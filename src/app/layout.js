@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "FreePlay- Juegos gratis",
+  title: "FreePlay - Juegos gratis",
   description:
     "Consigue juegos gratis en tus plataformas favoritas. Actualizado en tiempo real.",
 };
