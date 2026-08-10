@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const PLATFORM_COLORS = {
-  Epic:           { bg: "#2563eb", color: "#fff" },
+  "Epic Games":     { bg: "#2563eb", color: "#fff" },
   Steam:          { bg: "#1b2838", color: "#c7d5e0" },
   GOG:            { bg: "#8b5cf6", color: "#fff" },
   PlayStation:    { bg: "#003791", color: "#fff" },
@@ -30,7 +30,7 @@ function calcCountdown(endDateStr) {
 
 export default function GameCard({
   title = "Juego",
-  platform = "Epic",
+  platform = "Epic Games",
   originalPrice = "$0.00",
   image = "",
   upcoming = false,

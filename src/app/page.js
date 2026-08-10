@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GameCard from "@/components/GameCard";
 
-const PLATFORMS = ["Todos", "Epic", "Steam", "GOG", "itch.io", "IndieGala", "Móvil", "Otros"];
+const PLATFORMS = ["Todos", "Epic Games", "Steam", "GOG", "itch.io", "IndieGala", "Móvil", "Otros"];
 
 function LoadingSkeleton() {
   return (
