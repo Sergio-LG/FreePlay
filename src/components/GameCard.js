@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const PLATFORM_COLORS = {
-  Epic:           { bg: "#2563eb", color: "#fff" },
+  "Epic Games":     { bg: "#2563eb", color: "#fff" },
   Steam:          { bg: "#1b2838", color: "#c7d5e0" },
   GOG:            { bg: "#8b5cf6", color: "#fff" },
   PlayStation:    { bg: "#003791", color: "#fff" },
@@ -29,7 +30,7 @@ function calcCountdown(endDateStr) {
 
 export default function GameCard({
   title = "Juego",
-  platform = "Epic",
+  platform = "Epic Games",
   originalPrice = "$0.00",
   image = "",
   upcoming = false,
@@ -64,7 +65,7 @@ export default function GameCard({
 
       <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", background: "#111", overflow: "hidden" }}>
         {image
-          ? <img src={image} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          ? <Image src={image} alt={title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" style={{ objectFit: "cover" }} />
           : <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#1f2937 0%,#111827 100%)" }} />
         }
 
@@ -107,7 +108,7 @@ export default function GameCard({
         </h3>
 
 
-        <div style={{ marginTop: "auto", paddingTop: "0.6rem", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.5rem" }}>
+        <div className="flex flex-row items-center justify-between" style={{ marginTop: "auto", paddingTop: "0.6rem", gap: "0.5rem" }}>
           {showTimer ? (
             <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: "0.7rem", color: "#9ca3af" }}>
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2">
@@ -131,6 +132,7 @@ export default function GameCard({
               padding: "0.35rem 0.9rem", borderRadius: 9999,
               transition: "background 0.18s",
               flexShrink: 0,
+              alignSelf: "center",
             }}
             onMouseEnter={e => { e.currentTarget.style.background = "#ea6a0a"; }}
             onMouseLeave={e => { e.currentTarget.style.background = "#f97316"; }}

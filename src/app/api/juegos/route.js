@@ -6,7 +6,7 @@ const EUR_RATE_URL = "https://open.er-api.com/v6/latest/USD";
 const EUR_FALLBACK = 0.92;
 
 const PLATFORM_MAP = [
-  ["epic games", "Epic"],
+  ["epic games", "Epic Games"],
   ["steam", "Steam"],
   ["gog", "GOG"],
   ["playstation", "PlayStation"],

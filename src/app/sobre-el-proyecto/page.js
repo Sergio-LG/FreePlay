@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -29,13 +30,13 @@ export default function SobreElProyecto() {
           <div className="flex flex-row gap-3">
             <div className="bg-[#1a1a1a] rounded-[25%] px-5 py-2">
                 <a href="https://github.com/Sergio-LG" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center w-15">
-                    <img src="Github.png" alt="Github" width="50px"/>
+                    <Image src="/Github.png" alt="Github" width={50} height={50} />
                     <p>Github</p>
                 </a>
             </div>
             <div className="bg-[#1a1a1a] rounded-[25%] px-5 py-2">
                 <a href="https://www.linkedin.com/in/sergio-l%C3%B3pez-gil-1b544339a/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center w-15">
-                    <img src="LinkedIn.png" alt="Linkedin" width="50px"/>
+                    <Image src="/LinkedIn.png" alt="Linkedin" width={50} height={50} />
                     <p>Linkedin</p>
                 </a>
             </div>

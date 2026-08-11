@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GameCard from "@/components/GameCard";
 
-const PLATFORMS = ["Todos", "Epic", "Steam", "GOG", "itch.io", "IndieGala", "Móvil", "Otros"];
+const PLATFORMS = ["Todos", "Epic Games", "Steam", "GOG", "itch.io", "IndieGala", "Móvil", "Otros"];
 
 function LoadingSkeleton() {
   return (
@@ -68,7 +68,10 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    fetchGames();
+    async function load() {
+      await fetchGames();
+    }
+    load();
   }, [fetchGames]);
 
   function applyFilters(list) {
@@ -85,7 +88,7 @@ export default function Home() {
       <Navbar search={search} onSearch={setSearch} />
 
       <section
-        className="w-full px-8 py-16 relative"
+        className="w-full px-4 py-10 md:px-8 md:py-16 relative"
         style={{
           backgroundImage: "url('/banner.png')",
           backgroundSize: "cover",
@@ -144,7 +147,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="flex-1 max-w-[1280px] w-full mx-auto px-8 pb-16">
+      <main className="flex-1 max-w-[1280px] w-full mx-auto px-4 pb-16 md:px-8">
 
         {activeTab === "Gratis Ahora" && (
           <section className="mt-8">
@@ -172,7 +175,7 @@ export default function Home() {
               <p className="text-[#6b7280] text-center py-8">No hay juegos gratis para esta plataforma ahora mismo.</p>
             )}
             {!loading && !error && filteredFreeNow.length > 0 && (
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
                 {filteredFreeNow.map((game) => (
                   <GameCard key={game.id} {...game} />
                 ))}
@@ -195,7 +198,7 @@ export default function Home() {
               <p className="text-[#6b7280] text-center py-8">No hay juegos próximos para esta plataforma.</p>
             )}
             {!loading && !error && filteredUpcoming.length > 0 && (
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
                 {filteredUpcoming.map((game) => (
                   <GameCard key={game.id} {...game} />
                 ))}
