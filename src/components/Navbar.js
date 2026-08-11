@@ -132,7 +132,6 @@ export default function Navbar({ search = "", onSearch }) {
               borderRadius: 9999,
               width: 36,
               height: 36,
-              display: "flex",
               alignItems: "center",
               justifyContent: "center",
               cursor: "pointer",
